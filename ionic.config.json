@@ -1,5 +1,8 @@
 {
-  "name": "menuTabs",
-  "integrations": {},
+  "name": "eCupom33",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
+

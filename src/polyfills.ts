@@ -1,18 +1,18 @@
-/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called "evergreen" browsers; the last versions of browsers that
- * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
- * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
+/*
+  * Este arquivo inclui polyfills necessários ao Angular e é carregado antes do aplicativo.
+  * Você pode adicionar seus próprios polyfills extras a este arquivo.
+  *
+  * Este arquivo é dividido em duas seções:
+  * 1. Polyfills do navegador. Estes são aplicados antes de carregar o ZoneJS e são classificados pelos navegadores.
+  * 2. Importações de aplicativo. Arquivos importados após ZoneJS que devem ser carregados antes do seu principal
+  *      Arquivo.
+  *
+  * A configuração atual é para os chamados navegadores "evergreen"; as últimas versões dos navegadores que
+  * atualizar-se automaticamente. Isso inclui o Safari> = 10, o Chrome> = 55 (incluindo o Opera),
+  * Edge> = 13 na área de trabalho e iOS 10 e Chrome no celular.
+  *
+  * Saiba mais em https://angular.io/guide/browser-support
+*/
 
 /***************************************************************************************************
  * BROWSER POLYFILLS
@@ -22,35 +22,37 @@
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
 /**
- * Web Animations `@angular/platform-browser/animations`
- * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
- * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
- */
-// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+ * Animações da Web `@ angular / navegador de plataforma / animações
+ * Necessário somente se o AnimationBuilder for usado dentro do aplicativo e usar o IE / Edge ou o Safari.
+ * Suporte de animação padrão em Angular não requer nenhum polyfills (como de Angular 6.0).
+ * /
+// import 'web-animations-js'; // Execute `npm install --save web-animations-js`.
+
 
 /**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags.ts';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
+
+ * Por padrão, o zone.js corrigirá todas as possíveis macroTask e DomEvents.
+ * o usuário pode desativar partes do patch macroTask / DomEvents definindo os seguintes flags
+ * porque esses sinalizadores precisam ser configurados antes de o `zone.js` ser carregado e o webpack
+ * vai colocar a importação no topo do pacote, então o usuário precisa criar um arquivo separado
+ * neste diretório (por exemplo: zone-flags.ts) e coloque os seguintes sinalizadores
+ * nesse arquivo e adicione o seguinte código antes de importar o zone.js.
+ * importar './zone-flags.ts';
+ *
+ * Os sinalizadores permitidos em zone-flags.ts estão listados aqui.
+ *
+ * Os seguintes sinalizadores funcionarão para todos os navegadores.
+ *
+ * (janela como qualquer) .__ Zone_disable_requestAnimationFrame = true; // desativar o patch requestAnimationFrame
+ * (janela como qualquer) .__ Zone_disable_on_property = true; // desabilitar o patch onProperty como onclick
+ * (janela como qualquer) .__ zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable disable eventNames especificado
+ *
+ * nas ferramentas de desenvolvedor do IE / Edge, o addEventListener também será empacotado por zone.js
+ * com o seguinte sinalizador, ele irá ignorar o patch `zone.js` para o IE / Edge
+ *
+ * (janela como qualquer) .__ Zone_enable_cross_context_check = true;
+ 
+**/
 
 import './zone-flags.ts';
 
