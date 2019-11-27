@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       {
         path: 'main',
-        loadChildren: '../main/tab1.module#Tab1PageModule'
+        loadChildren: '../main/principal.module#principalPageModule'
       },
       {
         path: 'main/details',
@@ -22,7 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'config',
-        loadChildren: '../config/tab2.module#Tab2PageModule'
+        loadChildren: '../config/conf.module#confPageModule'
       }
     ]
   },

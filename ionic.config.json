@@ -1,8 +1,8 @@
 {
   "name": "eCupom33",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
-

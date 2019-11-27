@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="ios-undo"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Criar Novo Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+  <form #form="ngForm" (ngSubmit)="atualizar(form);" method="post">
+
+
+
+    <ion-label position="floating">Nome:</ion-label>
+    <ion-input ngModel type="text" placeholder="Nome do evento" name="Nome" required value="{{ Nome  }}"> </ion-input>
+
+    <ion-label position="floating">Data do evento:</ion-label>
+    <ion-datetime ngModel type="text" doneText='OK' cancelText='CANCELAR' displayFormat="DD/MM/YYYY"
+      placeholder="DD/MM/AAAA " name="DataDoEvento" required value="{{ DataDoEvento  }}"></ion-datetime>
+
+
+
+    <ion-label position="floating">Link do evento:</ion-label>
+    <ion-input ngModel type="text" placeholder="Link do evento" name="link" required value="{{ link  }}">
+    </ion-input>
+
+
+
+
+    <ion-label position="floating">Descrição do evento:</ion-label>
+    <ion-input ngModel type="text" placeholder="Descrição do evento" name="desc" required value="{{ desc  }}">
+    </ion-input>
+
+
+
+    <div class="ion-text-center">
+      <ion-button type="submit" [disabled]="!form.valid" class="at_but">Criar</ion-button>
+    </div>
+
+
+  </form>
+
+</ion-content>

@@ -21,12 +21,12 @@ export class AlertService {
     });
     toast.present();
   }
-  hideLoader() {
+  hideLoader(duration:number) {
     setTimeout(() => {
       this.loadingCtrl.dismiss();
-    }, 2000);
+    }, duration);
   }
-  async showLoader(_pMessage = 'Carregando...' ) {
+  async showLoader(_pMessage = 'Carregando...', duration = 2000 ) {
     this.loaderToShow = this.loadingCtrl.create({
       message: _pMessage,
       //duration: 2000,
@@ -38,7 +38,7 @@ export class AlertService {
         //console.log('Saindo... Aguarde!!!');
       });
     });
-    this.hideLoader();
+    this.hideLoader(duration);
   }
 
   async presentAlert({ pTitle, pSubtitle, pMessage, pTextOkay = 'OK' }: { pTitle: any; pSubtitle: any; pMessage: any; pTextOkay?: string; }) {

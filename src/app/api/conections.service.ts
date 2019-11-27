@@ -11,7 +11,7 @@ import 'rxjs/add/operator/do';
 export class ConectionsService {
   
  // private baseUrl = 'https://order-app-76ad0.firebaseio.com';  
- private Localhost ='http://undercode.tecnologia.ws/ServiceMenu/api/Geral/' ;
+ private Localhost ='http://localhost/ServiceProntoBook/api/Geral/' ;
  private Localhostpermanant ='http://localhost:60313/api/Geral/' ;
  private EngineHostApi = 'localhost:8081';
  //private id : any;

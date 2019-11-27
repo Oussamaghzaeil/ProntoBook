@@ -26,14 +26,15 @@ var AlertService = /** @class */ (function () {
             });
         });
     };
-    AlertService.prototype.hideLoader = function () {
+    AlertService.prototype.hideLoader = function (duration) {
         var _this = this;
         setTimeout(function () {
             _this.loadingCtrl.dismiss();
-        }, 2000);
+        }, duration);
     };
-    AlertService.prototype.showLoader = function (_pMessage) {
+    AlertService.prototype.showLoader = function (_pMessage, duration) {
         if (_pMessage === void 0) { _pMessage = 'Carregando...'; }
+        if (duration === void 0) { duration = 2000; }
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             return tslib_1.__generator(this, function (_a) {
                 this.loaderToShow = this.loadingCtrl.create({
@@ -44,7 +45,7 @@ var AlertService = /** @class */ (function () {
                         //console.log('Saindo... Aguarde!!!');
                     });
                 });
-                this.hideLoader();
+                this.hideLoader(duration);
                 return [2 /*return*/];
             });
         });

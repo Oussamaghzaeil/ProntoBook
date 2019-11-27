@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MinhaContaPage } from './minhaconta.page';
+import {NgxMaskIonicModule} from 'ngx-mask-ionic'
+
 
 const routes: Routes = [
   {
@@ -16,11 +18,13 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    NgxMaskIonicModule,
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
   declarations: [MinhaContaPage]
 })
 export class MinhaContaPageModule {}
+

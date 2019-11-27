@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Time } from '@angular/common';
 import { timer } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { SplashPage } from './/pages/splash/splash.page';
+
+
 
 @Component({
   selector: 'app-root',
@@ -32,7 +35,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar    
+    private statusBar: StatusBar,   
+    private modalController : ModalController
   ) {
     this.initializeApp();
     //this.showLoader();
@@ -43,11 +47,20 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();           
+      this.splashScreen.hide(); 
+      this.SplashModal();          
     });
 
   }
-  
+
+  async SplashModal() {    
+    const modal = await this.modalController.create({
+      component: SplashPage,
+      componentProps: {Titulo:"Teste"}
+    });
+    return await modal.present();
+  }
+
   async delay(ms: number) {
     await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>{
       return console.log("fired");

@@ -11,16 +11,12 @@ var routes = [
         component: MenuPage,
         children: [
             {
-                path: 'first',
+                path: 'options',
                 loadChildren: '../menuoptions/menuoptions.module#OptionsPageModule'
             },
             {
                 path: 'minhaconta',
                 loadChildren: '../minhaconta/minhaconta.module#MinhaContaPageModule'
-            },
-            {
-                path: 'minhaconta/details',
-                loadChildren: '../details/details.module#DetailsPageModule'
             }
         ]
     }

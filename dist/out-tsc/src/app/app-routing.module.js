@@ -6,6 +6,10 @@ var routes = [
     { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
     { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
     { path: 'landing', loadChildren: './pages/landing/landing.module#LandingPageModule' },
+    { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
+    { path: 'recuperasenha', loadChildren: './pages/recuperasenha/recuperasenha.module#RecuperasenhaPageModule' },
+    { path: 'devices', loadChildren: './pages/devices/devices.module#DevicesPageModule' },
+    { path: 'splash', loadChildren: './pages/splash/splash.module#SplashPageModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

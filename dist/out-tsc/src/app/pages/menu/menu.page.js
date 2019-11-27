@@ -9,17 +9,17 @@ var MenuPage = /** @class */ (function () {
         this.pages = [
             {
                 title: 'Menu Principal',
-                url: '/menu/menuoptions',
+                url: '/menu/options',
                 icon: 'menu'
             },
             {
-                title: 'Minha Conta',
-                url: '/menu/second',
+                title: 'Perfil',
+                url: '/menu/minhaconta',
                 icon: 'person'
             },
             {
                 title: 'Configurações',
-                url: '/menu/menuoptions/tabs/config',
+                url: '/menu/options/tabs/config',
                 icon: 'settings'
             }
         ];

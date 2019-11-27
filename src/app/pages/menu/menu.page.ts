@@ -12,19 +12,14 @@ export class MenuPage implements OnInit {
   pages = [
     {
       title: 'Menu Principal',
-      url: '/menu/first',
+      url: '/menu/options',
       icon : 'menu'
     },
     {
-      title: 'Minha Conta',
-      url: '/menu/minhaconta',
-      icon : 'person'
-    },   
-    {
-      title: 'Configurações',
-      url: '/menu/menuoptions/tabs/config',
-      icon : 'settings'
-    }     
+      title: 'Perfil',
+      icon :'person',
+      url: '/menu/minhaconta'
+    }  
   ];
  
   constructor(
@@ -33,7 +28,6 @@ export class MenuPage implements OnInit {
       if (event && event.url) {
         this.selectedPath = event.url;
       }
-
     });
   }
 

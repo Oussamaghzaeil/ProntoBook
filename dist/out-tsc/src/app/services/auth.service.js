@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { AlertService } from 'src/app/services/alert.service';
 import { EnvService } from './env.service';
 //import { Base64 } from '@ionic-native/base64/ngx';
+//import { Observable, throwError } from 'rxjs';
 var AuthService = /** @class */ (function () {
     function AuthService(http, platform, 
     //private network: Network,      
@@ -55,16 +56,17 @@ var AuthService = /** @class */ (function () {
         };
         this.Login = function (form) {
             return tslib_1.__awaiter(this, void 0, void 0, function () {
-                var ParamDataJson, strDataJson, ParamHashkey, paramUrlAPI, paramsAPI, EngineAPI;
+                var ParamDataJson, strDataJson, StoreProcName, ParamHashkey, paramUrlAPI, paramsAPI, EngineAPI;
                 var _this = this;
                 return tslib_1.__generator(this, function (_a) {
                     ParamDataJson = btoa(JSON.stringify(form.value));
                     strDataJson = atob(ParamDataJson);
+                    StoreProcName = "spUsuarioAuthentication";
                     ParamHashkey = sessionStorage.SessionHashkey;
                     paramUrlAPI = this.env.API_HOST + this.env.API_URL + '/authentication?';
-                    paramsAPI = "DataJson=" + ParamDataJson;
+                    paramsAPI = "StoreProcName=" + StoreProcName + "&DataJson=" + ParamDataJson;
                     EngineAPI = paramUrlAPI + paramsAPI;
-                    return [2 /*return*/, new Promise(function (resolve) {
+                    return [2 /*return*/, new Promise(function (resolve, reject) {
                             _this.coletionsData = _this.http.get(EngineAPI);
                             _this.coletionsData.subscribe(function (data) {
                                 if (data[0].success) {
@@ -78,44 +80,54 @@ var AuthService = /** @class */ (function () {
                                     _this.alertService.presentAlert({ pTitle: 'ATENÇÃO', pSubtitle: 'Autendicação no Sistema', pMessage: data[0].message });
                                 }
                                 resolve(data);
+                            }, function (error) {
+                                _this.alertService.presentAlert({ pTitle: "Atenção", pSubtitle: "Servidor Indisponível. Tente mais tarde!!!", pMessage: "Status Error:" + error.status + " | " + error.statusText });
+                                console.log("Error: ", error);
                             });
                         })];
                 });
             });
         };
-        this.Register = function (form, pParamEntidadeDB) {
+        this.Register = function (form) {
             return tslib_1.__awaiter(this, void 0, void 0, function () {
-                var ParamDataJson, paramUrlAPI, paramsAPI, EngineAPI;
+                var StoreProcName, ParamDataJson, strDataJson, paramUrlAPI, paramsAPI, EngineAPI;
                 var _this = this;
                 return tslib_1.__generator(this, function (_a) {
+                    StoreProcName = "spRegister";
                     ParamDataJson = btoa(JSON.stringify(form.value));
+                    strDataJson = atob(ParamDataJson);
                     paramUrlAPI = this.env.API_HOST + this.env.API_URL + '/register?';
-                    paramsAPI = "EntidadeDB=" + pParamEntidadeDB + "&DataJson=" + ParamDataJson;
+                    paramsAPI = "StoreProcName=" + StoreProcName + "&DataJson=" + ParamDataJson;
                     EngineAPI = paramUrlAPI + paramsAPI;
                     return [2 /*return*/, new Promise(function (resolve) {
                             _this.coletionsData = _this.http.get(EngineAPI);
                             _this.coletionsData.subscribe(function (data) {
                                 resolve(data);
-                                console.log(data);
+                                //console.log(data);                              
+                            }, function (error) {
+                                _this.alertService.presentAlert({ pTitle: "Atenção", pSubtitle: "Servidor Indisponível. Tente mais tarde!!!", pMessage: "Status Error:" + error.status + " | " + error.statusText });
+                                console.log("Error: ", error);
                             });
                         })];
                 });
             });
         };
-        this.EngineQueryStoreProc = function (form, pParamEntidadeDB, pHashkey) {
+        this.QueryStoreProc = function (MetodoNameAPI, StoreProcName, ParamsJson) {
             return tslib_1.__awaiter(this, void 0, void 0, function () {
                 var ParamDataJson, paramUrlAPI, paramsAPI, EngineAPI;
                 var _this = this;
                 return tslib_1.__generator(this, function (_a) {
-                    ParamDataJson = btoa(JSON.stringify(form.value));
-                    paramUrlAPI = this.env.API_HOST + this.env.API_URL + '/StoreProcExec?';
-                    paramsAPI = "EntidadeDB=" + pParamEntidadeDB + "&DataJson=" + ParamDataJson + "&Hashkey=" + pHashkey;
+                    ParamDataJson = btoa(JSON.stringify(ParamsJson));
+                    paramUrlAPI = this.env.API_HOST + this.env.API_URL + '/' + MetodoNameAPI + '?';
+                    paramsAPI = "StoreProcName=" + StoreProcName + "&DataJson=" + ParamDataJson;
                     EngineAPI = paramUrlAPI + paramsAPI;
                     return [2 /*return*/, new Promise(function (resolve) {
                             _this.coletionsData = _this.http.get(EngineAPI);
                             _this.coletionsData.subscribe(function (data) {
                                 resolve(data);
-                                console.log(data);
+                            }, function (error) {
+                                _this.alertService.presentAlert({ pTitle: "Atenção", pSubtitle: "Servidor Indisponível. Tente mais tarde!!!", pMessage: "Status Error:" + error.status + " | " + error.statusText });
+                                console.log("Error: ", error);
                             });
                         })];
                 });

@@ -15,12 +15,8 @@ const routes: Routes = [
         loadChildren: '../menuoptions/menuoptions.module#OptionsPageModule'
       },
       {
-        path: 'minhaconta',
+        path: 'minhaconta',        
         loadChildren: '../minhaconta/minhaconta.module#MinhaContaPageModule'
-      },
-      {
-        path: 'second/details',
-        loadChildren: '../details/details.module#DetailsPageModule'
       }
     ]
   }

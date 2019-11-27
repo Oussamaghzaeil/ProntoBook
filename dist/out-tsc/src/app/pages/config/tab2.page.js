@@ -1,19 +1,19 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
-var Tab2Page = /** @class */ (function () {
-    function Tab2Page() {
+var confPage = /** @class */ (function () {
+    function confPage() {
     }
-    Tab2Page.prototype.ngOnInit = function () {
+    confPage.prototype.ngOnInit = function () {
     };
-    Tab2Page = tslib_1.__decorate([
+    confPage = tslib_1.__decorate([
         Component({
-            selector: 'app-tab2',
-            templateUrl: './tab2.page.html',
-            styleUrls: ['./tab2.page.scss'],
+            selector: 'app-conf',
+            templateUrl: './conf.page.html',
+            styleUrls: ['./conf.page.scss'],
         }),
         tslib_1.__metadata("design:paramtypes", [])
-    ], Tab2Page);
-    return Tab2Page;
+    ], confPage);
+    return confPage;
 }());
-export { Tab2Page };
-//# sourceMappingURL=tab2.page.js.map
+export { confPage };
+//# sourceMappingURL=conf.page.js.map
